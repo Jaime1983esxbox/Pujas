@@ -1,0 +1,58 @@
+<div class="container">
+    <h1>PUJAS JUGADORES FÚTBOL</h1>
+    <select name="" id="jugador" [(ngModel)]="jugadorSeleccionado" ngDefaultControl (change)="seleccionarJugador()">
+        <option selected value="undefined" disabled>Jugador</option>
+        <option id="" *ngFor="let jugador of jugadores" [ngValue]="jugador">{{jugador.nombre}}</option>
+    </select><br><br><br>
+    <div *ngIf="mostrarBotonPuja">
+        <input class="boton" type="button" value="Iniciar Puja" (click)="iniciarPuja()">
+    </div>
+    <div class="inputs" *ngIf="mostrarInputs">
+        <div class="input">
+            <label for="">Usuario 1</label>
+            <input type="text" [(ngModel)]="usuario1.puja" ngDefaultControl>
+            <input class="botonPuja" type="button" value="Pujar" (click)="pujar(usuario1)">
+        </div>
+        <div class="input">
+            <label for="">Usuario 2</label>
+            <input type="text" [(ngModel)]="usuario2.puja" ngDefaultControl>
+            <input class="botonPuja" type="button" value="Pujar" (click)="pujar(usuario2)">
+        </div>
+        <div class="input">
+            <label for="">Usuario 3</label>
+            <input type="text" [(ngModel)]="usuario3.puja" ngDefaultControl>
+            <input class="botonPuja" type="button" value="Pujar" (click)="pujar(usuario3)">
+        </div>
+        <div class="input">
+            <span>Puja Inicial: {{pujaInicial}}</span>
+            <span>Puja actual: {{pujaActual}}</span>
+            <span>Usuario ganador: {{usuarioGanadorPuja.nombre}}</span>
+            <span>Mínimo puja siguiente: {{pujaSiguiente}}</span>
+        </div>
+    </div><br><br>
+    <input *ngIf="mostrarBotonFinalizar" class="boton botonFinalizarPuja" 
+    type="button" value="Finalizar Puja" (click)="finalizarPuja()"><br><br>
+    <div class="resultadoPuja" *ngIf="mostrarResultado">
+        <div [(ngModel)]="usuario1" ngDefaultControl class="listaJugadores">
+            <p>El saldo del usuario {{usuario1.nombre}} es de: <span>{{usuario1.saldo}}€</span></p>
+            <p>Jugadores del usuario {{usuario1.nombre}}:<br></p>
+            <ul>
+                <li *ngFor="let jugador of jugadoresUsuario1">{{jugador.nombre}}</li>
+            </ul>
+        </div>    
+        <div [(ngModel)]="usuario2" ngDefaultControl class="listaJugadores">
+            <p>El saldo del usuario {{usuario2.nombre}} es de: <span>{{usuario2.saldo}}€</span></p>
+            <p>Jugadores del usuario {{usuario2.nombre}}:<br></p>
+            <ul>
+                <li *ngFor="let jugador of jugadoresUsuario2">{{jugador.nombre}}</li>
+            </ul>
+        </div>
+        <div [(ngModel)]="usuario3" ngDefaultControl class="listaJugadores">
+            <p>El saldo del usuario {{usuario3.nombre}} es de: <span>{{usuario3.saldo}}€</span></p>
+            <p>Jugadores del usuario {{usuario3.nombre}}:<br></p>
+            <ul>
+                <li *ngFor="let jugador of jugadoresUsuario3">{{jugador.nombre}}</li>
+            </ul>
+        </div>    
+    </div>
+</div>

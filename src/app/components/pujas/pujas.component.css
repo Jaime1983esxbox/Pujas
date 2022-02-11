@@ -1,0 +1,83 @@
+.container{
+    text-align: center;
+}
+
+h1{
+    color: white;
+    font-weight: bold
+}
+
+select{
+    width: 210px;
+    height: 40px;
+    font-size: 25px;
+    margin-right: 20px;
+}
+
+.inputs{
+    margin-top: 50px;
+    color: white;
+    font-size: 30px;
+}
+
+.input{
+    display: inline-grid;
+    justify-content: space-around;
+    margin-right: 100px;
+}
+
+.input span{
+    text-align: initial;
+}
+
+.boton{
+    margin-top: 10px;
+    width: 218px;
+    background-color: khaki;
+    border: none;
+    cursor: pointer;
+}
+
+.botonPuja{
+    margin-top: 10px;
+    width: 218px;
+    background-color: thistle;
+    border: none;
+    cursor: pointer;
+}
+
+.botonFinalizarPuja{
+    margin-right: 643px;
+}
+
+input{
+    width: 210px;
+    height: 40px;
+    margin-right: 20px;
+    font-size: 25px;
+}
+
+.inputs label{
+    margin-right: 10px;
+}
+
+.resultadoPuja{
+    color: white;
+    font-size: 30px;
+    text-align: left;
+    display: flex;
+    justify-content: space-around;
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    text-align: center;
+}
+
+.listaJugadores li{
+    font-size: 30px;
+    font-weight: bold;
+}
